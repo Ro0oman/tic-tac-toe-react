@@ -20,7 +20,7 @@ function App() {
       return <h1 className='player'>Draw</h1>
     }
     return(
-      <h1 >The player <span className='player'>{winner}</span> is the Winner</h1>
+      <h1 >Player <span className='player'>{winner}</span> Wins</h1>
     )
   }
 
@@ -88,7 +88,7 @@ function App() {
   }
 
   const handleReset = () => {
-    setGrid(['O','','','O','','','','',''])
+    setGrid(['','','','','','','','',''])
     setTurn('X')
     setWinner(false)
   }
