@@ -87,3 +87,11 @@ button{
   font-size: 20px;
   color: yellow;
 }
+
+@media screen and (max-width: 767px) {
+  html, body {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+  }
+}
