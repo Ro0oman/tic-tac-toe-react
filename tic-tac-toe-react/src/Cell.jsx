@@ -1,10 +1,11 @@
 
-export function Cell({cellId, grid, setGrid, turn, setTurn, onCellClick}){
+export function Cell({cellId, grid, setGrid, turn, setTurn, onCellClick,disabled}){
 
+console.log(disabled);
 
 
     const handleClick = () => {
-        if(grid[cellId] === '')
+        if(grid[cellId] === '' && disabled === true)
             {
             const newGrid = [...grid]
             // Modificas la copia, no el original
@@ -18,9 +19,7 @@ export function Cell({cellId, grid, setGrid, turn, setTurn, onCellClick}){
             else{
                 setTurn('X')
             }
-            onCellClick(cellId); // <- ejecuta la función del padre
-
-                
+            onCellClick(cellId, newGrid); // <- ejecuta la función del padre  
         }
     }
 
