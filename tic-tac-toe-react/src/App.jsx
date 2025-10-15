@@ -13,7 +13,18 @@ function App() {
     '','','',
   ])
 
+  function handleCellClick(id) {
+    console.log("Se pulsó la celda:", id);
+  }
 
+  const handleReset = () => {
+    setGrid([
+      '','','',
+      '','','',
+      '','','',
+    ])
+    setTurn('X')
+  }
 
   return (
     <>
@@ -22,14 +33,14 @@ function App() {
         {
           grid.map((element, i) => {
             return (
-              <Cell setGrid={setGrid} turn={turn} cellId={i} grid={grid}>{grid[i]}</Cell>
+              <Cell onCellClick={handleCellClick} setGrid={setGrid} setTurn={setTurn} turn={turn} cellId={i} grid={grid}>{grid[i]}</Cell>
             );
           })
         }
       </div>
 
       <div className='resetBox'>
-          <button className='resetButton'> Reset </button>
+          <button className='resetButton' onClick={handleReset}> Reset </button>
       </div>
 
     </> 
