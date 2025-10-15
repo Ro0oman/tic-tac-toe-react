@@ -6,15 +6,14 @@ import {Cell} from './Cell'
 
 
 function App() {
-  const [count, setCount] = useState(0)
   const [turn, setTurn] = useState('X')
+  const [grid, setGrid] = useState([
+    '','','',
+    '','','',
+    '','','',
+  ])
 
-   const grid = [
-    '','','',
-    '','','',
-    '','','',
-  ]
-  
+
 
   return (
     <>
@@ -23,7 +22,7 @@ function App() {
         {
           grid.map((element, i) => {
             return (
-              <Cell  cellId={i} grid={grid}>element</Cell>
+              <Cell setGrid={setGrid} turn={turn} cellId={i} grid={grid}>{grid[i]}</Cell>
             );
           })
         }
